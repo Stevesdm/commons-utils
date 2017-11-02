@@ -12,6 +12,7 @@
     <modules>
         <module>../common-orika</module>
         <module>../common-lang3</module>
+        <module>../common-fastjson</module>
     </modules>
 
 
