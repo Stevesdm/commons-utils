@@ -1,5 +1,7 @@
 package com.steve.model;
 
+import com.steve.validatorgroup.InsertValidatorGroup;
+import com.steve.validatorgroup.UpdateValidatorGroup;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -9,10 +11,11 @@ import javax.validation.constraints.NotNull;
 
 public class Person {
 
+    @NotNull(message = "参数id不能为空",groups = UpdateValidatorGroup.class)
     private Long id;
 
-    @NotNull(message = "参数[name]不能为空")
-    @Length(min = 2,max = 4,message = "参数[name]长度在2-4位之间")
+    @NotNull(message = "参数[name]不能为空",groups = InsertValidatorGroup.class)
+    @Length(min = 2,max = 4,message = "参数[name]长度在2-4位之间",groups = InsertValidatorGroup.class)
     private String name;
 
     @Max(value = 80,message = "参数最大不能超过80")
@@ -52,5 +55,15 @@ public class Person {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
