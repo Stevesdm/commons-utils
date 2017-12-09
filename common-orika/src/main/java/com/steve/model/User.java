@@ -12,8 +12,8 @@ public class User implements Serializable {
 
     private Integer id;
     private Integer userId;
-    private String  username;
-    private Integer  userAge;
+    private String username;
+    private Integer userAge;
     private String sex;
     private String address;
     private Date createtime;

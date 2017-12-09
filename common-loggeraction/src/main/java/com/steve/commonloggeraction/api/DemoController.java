@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 
-    @GetMapping(value="/demo")
-    @LogActionAnnotation(action = "hello world",module = "demo",comment = "test")
-    public String demo(){
+    @GetMapping(value = "/demo")
+    @LogActionAnnotation(action = "hello world", module = "demo", comment = "test")
+    public String demo() {
         return "hello world";
     }
 }

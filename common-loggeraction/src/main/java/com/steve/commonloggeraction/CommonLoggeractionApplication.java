@@ -9,10 +9,10 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class CommonLoggeractionApplication extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(CommonLoggeractionApplication.class, args);
-		Thread logThread = new Thread(ctx.getBean(LogActionEngine.class));
-		//启动线程收集日志
-		logThread.start();
-	}
+    public static void main(String[] args) {
+        ApplicationContext ctx = SpringApplication.run(CommonLoggeractionApplication.class, args);
+        Thread logThread = new Thread(ctx.getBean(LogActionEngine.class));
+        //启动线程收集日志
+        logThread.start();
+    }
 }

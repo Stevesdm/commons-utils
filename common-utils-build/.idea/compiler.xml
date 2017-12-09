@@ -8,14 +8,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common-fastjson" />
         <module name="common-lang3" />
+        <module name="common-loggeraction" />
         <module name="common-util-orika" />
+        <module name="commons-validation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common-fastjson" target="1.5" />
       <module name="common-lang3" target="1.5" />
+      <module name="common-loggeraction" target="1.8" />
       <module name="common-util-orika" target="1.5" />
       <module name="common-utils-build" target="1.5" />
+      <module name="commons-validation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

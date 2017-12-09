@@ -10,7 +10,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Description:  收集日志
+ * @Description: 收集日志
  * @Author: stevejobson
  * @CreateDate: 2017/11/23 下午3:09
  */
@@ -38,7 +38,7 @@ public class LogActionEngine implements Runnable {
                 JSONObject jsonObject = queue.poll(timeout, TimeUnit.SECONDS);
                 logger.info(jsonObject.toJSONString());
             } catch (Exception e) {
-                logger.error("save log index exception:",e);
+                logger.error("save log index exception:", e);
             }
         }
     }

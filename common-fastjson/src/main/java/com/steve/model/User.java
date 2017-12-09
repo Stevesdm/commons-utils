@@ -5,12 +5,12 @@ import com.alibaba.fastjson.annotation.JSONField;
 import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable,Comparable{
+public class User implements Serializable, Comparable {
 
     private static final long serialVersionUID = -5108867664400399282L;
     //ordinal设置字段序列化顺序
     //format设置输出格式
-    @JSONField(name="user_id",ordinal = 0)
+    @JSONField(name = "user_id", ordinal = 0)
     private Long uid;
     @JSONField(ordinal = 1)
     private String name;
@@ -20,7 +20,7 @@ public class User implements Serializable,Comparable{
     private String address;
     @JSONField(ordinal = 4)
     private Boolean status;
-    @JSONField(ordinal = 5,format = "yyyy-MM-dd")
+    @JSONField(ordinal = 5, format = "yyyy-MM-dd")
     private Date createTime;
 
     public Long getUid() {
@@ -73,7 +73,7 @@ public class User implements Serializable,Comparable{
 
     public int compareTo(Object object) {
         if (object instanceof User) {
-             User user= (User)object;
+            User user = (User) object;
             int result = 0;
             result = user.getCreateTime().compareTo(getCreateTime());
             if (result == 0) {

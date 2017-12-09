@@ -18,8 +18,8 @@ public class ApiController {
     private static Logger logger = LoggerFactory.getLogger(ApiController.class);
 
     @RequestMapping("/person")
-    public String save(@RequestBody @Valid Person person, BindingResult result){
-        if (result.hasFieldErrors()){
+    public String save(@RequestBody @Valid Person person, BindingResult result) {
+        if (result.hasFieldErrors()) {
             FieldError error = result.getFieldError();
             System.out.println(error);
             return error.getDefaultMessage();
@@ -29,19 +29,18 @@ public class ApiController {
     }
 
     @RequestMapping("/demo")
-    public String demo(@RequestBody Person person){
-        logger.info(person+"");
+    public String demo(@RequestBody Person person) {
+        logger.info(person + "");
         return "ok";
     }
 
     @RequestMapping("/demo2")
     public String demo2(
-            @RequestParam(name = "a",defaultValue = "aa",required = true) String a
-    ){
+            @RequestParam(name = "a", defaultValue = "aa", required = true) String a
+    ) {
         logger.info(a);
         return a;
     }
-
 
 
 }

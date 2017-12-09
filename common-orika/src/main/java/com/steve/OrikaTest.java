@@ -16,7 +16,7 @@ public class OrikaTest {
         MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
 
         mapperFactory.classMap(User.class, UserVO.class)
-                        .byDefault().register();
+                .byDefault().register();
         User user = new User();
         user.setId(1);
         user.setUserId(10000);

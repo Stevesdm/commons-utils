@@ -11,15 +11,15 @@ import javax.validation.constraints.NotNull;
 
 public class Person {
 
-    @NotNull(message = "参数id不能为空",groups = UpdateValidatorGroup.class)
+    @NotNull(message = "参数id不能为空", groups = UpdateValidatorGroup.class)
     private Long id;
 
-    @NotNull(message = "参数[name]不能为空",groups = InsertValidatorGroup.class)
-    @Length(min = 2,max = 4,message = "参数[name]长度在2-4位之间",groups = InsertValidatorGroup.class)
+    @NotNull(message = "参数[name]不能为空", groups = InsertValidatorGroup.class)
+    @Length(min = 2, max = 4, message = "参数[name]长度在2-4位之间", groups = InsertValidatorGroup.class)
     private String name;
 
-    @Max(value = 80,message = "参数最大不能超过80")
-    @Min(value = 1,message = "参数[age]最小不能小于1")
+    @Max(value = 80, message = "参数最大不能超过80")
+    @Min(value = 1, message = "参数[age]最小不能小于1")
     private int age;
 
     @NotEmpty(message = "参数[address]不能为空")

@@ -12,16 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 
 /**
- *
- * @Description:  日志拦截器
- * @Author:       stevejobson
- * @CreateDate:   2017/11/23 下午3:06
- *
+ * @Description: 日志拦截器
+ * @Author: stevejobson
+ * @CreateDate: 2017/11/23 下午3:06
  */
-public class LogActionInterceptor implements HandlerInterceptor{
+public class LogActionInterceptor implements HandlerInterceptor {
 
 
-    static  JSONObject logActionJsonObject = null;
+    static JSONObject logActionJsonObject = null;
+
     static {
         logActionJsonObject = new JSONObject();
     }
@@ -54,9 +53,9 @@ public class LogActionInterceptor implements HandlerInterceptor{
     private void logAction(HttpServletRequest request, LogActionAnnotation annotation, Method method) {
 
 
-        logActionJsonObject.put("action",annotation.action());
-        logActionJsonObject.put("module",annotation.module());
-        logActionJsonObject.put("comment",annotation.comment());
+        logActionJsonObject.put("action", annotation.action());
+        logActionJsonObject.put("module", annotation.module());
+        logActionJsonObject.put("comment", annotation.comment());
 
         System.out.println(logActionJsonObject.toJSONString());
 
